@@ -20,6 +20,11 @@ from django.utils.encoding import iri_to_uri
 from django.template.loader import render_to_string
 import gc
 
+try:
+    unicode = unicode
+except NameError:
+    unicode = str
+
 django_version = django.VERSION
 
 logger = logging.getLogger(__name__)

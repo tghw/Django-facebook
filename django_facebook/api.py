@@ -16,6 +16,11 @@ try:
     from dateutil.parser import parse as parse_date
 except ImportError:
     from django_facebook.utils import parse_like_datetime as parse_date
+    
+try:
+    unicode = unicode
+except NameError:
+    unicode = str
 
 
 logger = logging.getLogger(__name__)
